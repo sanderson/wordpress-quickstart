@@ -8,4 +8,4 @@ web1:
   before_deploy:
     - "sh pagoda/scripts/themes-plugins.sh"
 db1:
-  name: wp-db
+  name: mysql
