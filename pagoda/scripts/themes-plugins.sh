@@ -1,4 +1,4 @@
-cd wp-content/plugins
+cd var/www/$APP_NAME/wp-content/plugins
 tar -xz < <(curl -s http://wp-qs-assets.pagodabox.com/plugins.tar.gz wp-content/plugins)
 cd plugins
 mv * ..
