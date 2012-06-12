@@ -4,5 +4,9 @@ web1:
     - wp-content/uploads/
   after_build:
     - "mv pagoda/wp-config.php wp-config.php"
+      after_build:
+    - "mv pagoda/wp-config.php wp-config.php"
+  before_deploy:
+    - "sh pagoda/scripts/themes-plugins.sh"
 db1:
   name: wp-db
