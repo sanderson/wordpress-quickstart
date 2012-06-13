@@ -5,14 +5,9 @@ web1:
     - wp-content/themes/
     - wp-content/plugins/
   after_build:
-    - "sh pagoda/scripts/salt-curl-write.sh"
     - "mv pagoda/wp-config.php wp-config.php"
-  before_deploy:
-    - "tar -xvz < <(curl -s http://wp-qs-assets.pagodabox.com/plugins.tar.gz) -C wp-content/plugins"
-    - "mv wp-content/plugins/plugins/* wp-content/plugins/"
-    - "rm -rf wp-content/plugins/plugins"
-    - "tar -xvz < <(curl -s http://wp-qs-assets.pagodabox.com/themes.tar.gz) -C wp-content/themes"
-    - "mv wp-content/themes/themes/* wp-content/themes"
-    - "rm -rf wp-content/themes/themes"
+  php_extensions:
+    - mysql
+
 db1:
   name: mysql
