@@ -1,15 +1,7 @@
-cd /var/www/$APP_NAME/wp-content/plugins
-tar -xz < <(curl -s http://wp-qs-assets.pagodabox.com/plugins.tar.gz wp-content/plugins)
-cd plugins
-mv * ..
-cd ../
-rm -rf plugins
-cd ../../
-
-cd wp-content/themes
-tar -xz < <(curl -s http://wp-qs-assets.pagodabox.com/themes.tar.gz wp-content/themes)
-cd /themes
-mv * ..
-cd ../
-rm -rf themes
-cd ../../
+#!/bin/sh
+tar -xvz < <(curl -s http://wp-qs-assets.pagodabox.com/plugins.tar.gz) -C wp-content/plugins
+mv wp-content/plugins/plugins/* wp-content/plugins/
+rm -rf wp-content/plugins/plugins
+tar -xvz < <(curl -s http://wp-qs-assets.pagodabox.com/themes.tar.gz) -C wp-content/themes
+mv wp-content/themes/themes/* wp-content/themes
+rm -rf wp-content/themes/themes
