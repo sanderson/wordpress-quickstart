@@ -2,6 +2,8 @@ web1:
   name: wp-web 
   shared_writable_dirs:
     - wp-content/uploads/
+    - wp-content/themes/
+    - wp-content/plugins/
   after_build:
     - "sh pagoda/scripts/salt-curl-write.sh"
     - "mv pagoda/wp-config.php wp-config.php"
